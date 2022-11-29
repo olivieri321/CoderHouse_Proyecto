@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
@@ -13,14 +12,31 @@
         <div class="espacio_logo">
             <img class="logo" src="../img/logo.jpg" width="150" height="150">
         </div>
-            <nav class="navegacion">
-            <ul class="menu_navegacion">
-                <li class="boton_navegacion"><a href="../index.html">Home</a></li>
-                <li class="boton_navegacion"><a href="tour.html">Tour</a></li>
-                <li class="boton_navegacion"><a href="album.html">Album</a></li>
-                <li class="boton_navegacion"><a href="imagenes.html">Imagenes</a></li>
-                <li class="boton_navegacion"><a href="contacto.html">Contacto</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav" >
+                    <ul class="navbar-nav navegacion">
+                        <li class="nav-item boton_navegacion">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item boton_navegacion">
+                            <a class="nav-link" href="album.html">Album</a>
+                        </li>
+                        <li class="nav-item boton_navegacion">
+                            <a class="nav-link" href="tour.html">Tour</a>
+                        </li>
+                        <li class="nav-item boton_navegacion">
+                            <a class="nav-link" href="imagenes.html">Imagenes</a>
+                        </li>
+                        <li class="nav-item boton_navegacion">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main id="main_imagenes">
@@ -36,5 +52,6 @@
     <footer>
         <div id="info_footer"><h3>Creado por Facundo Olivieri</h1></div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>
