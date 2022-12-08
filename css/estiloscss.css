@@ -1,3 +1,16 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+::-webkit-scrollbar {
+  width: 12px; }
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #c8c8c8;
+  border-radius: 10px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: orange;
+  -webkit-box-shadow: inset 0 0 6px rgba(90, 90, 90, 0.7); }
+
 * {
   margin: 0%;
   padding: 0%;
@@ -9,25 +22,26 @@ a {
   text-align: center;
   margin: 0%;
   text-decoration: none !important;
-  color: white !important; }
+  color: white !important;
+  font-size: larger; }
 
 body {
   background-color: black !important;
   width: 100%; }
 
 /*mains*/
-#main_home {
+.main_home {
   display: flex;
   flex-direction: column;
   justify-content: center; }
 
-#main_tour {
+.main_tour {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%; }
 
-#mainalbum {
+.mainalbum {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,16 +51,25 @@ body {
 .espacio_logo {
   background-color: black; }
 
+.logo {
+  display: none; }
+
 /*menu de navegacion*/
 .boton_navegacion {
   border-radius: 2px;
   overflow-y: hidden; }
-  .boton_navegacion:hover {
-    transition: 1s;
-    background-color: orange; }
+  .boton_navegacion:hover .nav-link {
+    transition: 0.5s;
+    color: orange !important;
+    font-size: larger; }
+
+.seleccionado {
+  transition: 0.5s;
+  color: orange !important; }
 
 .navbar {
-  position: sticky; }
+  position: fixed;
+  width: 100%; }
 
 a {
   text-decoration: none;
@@ -54,14 +77,14 @@ a {
   font-size: small; }
 
 /*index*/
-#presentacion_home {
+.presentacion_home {
   width: auto; }
 
 .imagen_presentacion_home {
   height: 200px;
   overflow-y: hidden; }
 
-#descripcion_presentacion_home {
+.descripcion_presentacion_home {
   display: block;
   width: 100%;
   /*background-color: #513451;*/
@@ -70,52 +93,41 @@ a {
   text-align: center; }
 
 /*tour*/
-#descripcion_tour {
+.descripcion_tour {
+  margin-top: 55px !important;
   color: white;
   text-align: center; }
 
-#mapa_tour {
+.mapa_tour {
   width: 100%;
   margin-left: 15%; }
 
 /*album*/
-#playlist1 {
+.playlist1, .playlist2, .playlist3 {
   width: 100%;
   height: 380;
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 12px; }
 
-#playlist2 {
-  width: 100%;
-  height: 380;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 12px; }
-
-#playlist3 {
-  width: 100%;
-  height: 380;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 12px; }
-
-#descripcion_album {
+.descripcion_album {
+  margin-top: 55px !important;
   background-color: #232e2e;
   color: white;
   background-image: url(https://isbn.radiohead.com/994/responsive-images/847877060___a_515_377.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100px; }
+  height: fit-content; }
 
-#capa2_descripcion_album {
+.capa2_descripcion_album {
   background-color: rgba(18, 20, 27, 0.5);
   width: 100%;
   height: 100%;
   text-align: left; }
 
 /*imagenes*/
-#galeria_imagenes {
+.galeria_imagenes {
+  margin-top: 55px !important;
   background-color: orange;
   display: flex;
   justify-content: stretch;
@@ -123,32 +135,56 @@ a {
   width: 100%; }
 
 /*contacto*/
-#contacto_formulario {
+.contacto_formulario {
   background-color: #3b4e5e;
   color: white;
-  border-radius: 1%; }
+  border-radius: 1%;
+  margin-top: 90px !important;
+  margin-bottom: 30px !important; }
 
-#orden_boton_contacto {
+.orden_boton_contacto {
   display: flex;
   flex-direction: row;
   justify-content: left; }
 
-#boton_form {
+.boton_form {
   margin-right: 0.5%; }
 
 /*footer*/
 footer {
-  background-color: black; }
-
-#info_footer {
-  color: white;
-  height: 50px;
-  text-align: center; }
+  background-color: #3b4e5e;
+  text-align: center;
+  display: grid;
+  grid-template-areas: "contacto nada redes" "contacto nada redes";
+  width: 100%; }
+  footer h1 {
+    text-align: center;
+    width: 100%;
+    color: white !important;
+    margin-top: 3%; }
+  footer .contacto {
+    display: flex;
+    flex-direction: column;
+    grid-area: contacto;
+    justify-content: center; }
+    footer .contacto div {
+      display: flex;
+      flex-direction: row;
+      color: white; }
+  footer .redes {
+    grid-area: redes;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    footer .redes i {
+      margin-left: 30%; }
 
 /*Responsive*/
-@media only screen and (min-width: 600px) and (max-width: 900px) {
+@media only screen and (min-width: 600px) and (max-width: 992px) {
   .imagen_presentacion_home {
     height: 400px; }
+  .area2 {
+    background-image: image("img/integrantes.jfif"); }
   .navegacion {
     width: 50%;
     justify-content: space-between;
@@ -157,22 +193,25 @@ footer {
   a {
     font-size: large; }
   /*album*/
-  #playlist1 {
+  .playlist1, .playlist2, .playlist3 {
     display: block;
     width: 80%;
     grid-area: a2;
     margin-left: 10%; }
-  #playlist2 {
+  .logo {
+    max-width: 50px;
+    max-height: 50px; }
+  .playlist2 {
     display: block;
     width: 80%;
     margin-left: 10%;
     grid-area: a3; }
-  #playlist3 {
+  .playlist3 {
     display: block;
     width: 80%;
     margin-left: 10%;
     grid-area: a4; }
-  #descripcion_album {
+  .descripcion_album {
     background-color: #232e2e;
     grid-area: a1;
     color: white;
@@ -180,25 +219,25 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     height: auto; }
-  #capa2_descripcion_album {
+  .capa2_descripcion_album {
     background-color: rgba(18, 20, 27, 0.5);
     width: 100%;
     height: 100%;
     text-align: center; }
-  #mainalbum {
+  .mainalbum {
     display: flex;
     justify-content: center;
     flex-direction: column; }
-  #contacto_formulario {
+  .contacto_formulario {
     margin: 0% 1% 0% 1%; }
-  #galeria_imagenes {
+  .galeria_imagenes {
     background-color: orange;
     display: grid;
     grid-template-areas: "img1 img2 img3" "img4 img5 img6";
     justify-content: center;
     width: 100%; } }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 992px) {
   .imagen_presentacion_home {
     height: 400px; }
   .navegacion {
@@ -209,19 +248,19 @@ footer {
   a {
     font-size: larger; }
   /*album*/
-  #playlist1 {
+  .playlist1, .playlist2, .playlist3 {
     display: block;
     width: 80%;
     grid-area: a2; }
-  #playlist2 {
+  .playlist2 {
     display: block;
     width: 80%;
     grid-area: a3; }
-  #playlist3 {
+  .playlist3 {
     display: block;
     width: 80%;
     grid-area: a4; }
-  #descripcion_album {
+  .descripcion_album {
     background-color: #232e2e;
     grid-area: a1;
     color: white;
@@ -229,12 +268,12 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     height: auto; }
-  #capa2_descripcion_album {
+  .capa2_descripcion_album {
     background-color: rgba(18, 20, 27, 0.5);
     width: 100%;
     height: 100%;
     text-align: center; }
-  #mainalbum {
+  .mainalbum {
     display: grid;
     grid-template-areas: "a1 a1 a1" "a2 a3 a4";
     justify-content: center;
@@ -242,11 +281,16 @@ footer {
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 300px 600px;
     width: 100%; }
-  #contacto_formulario {
+  .contacto_formulario {
     margin: 0% 1% 0% 1%; }
-  #galeria_imagenes {
+  .galeria_imagenes {
     background-color: var(--color_2);
     display: grid;
     grid-template-areas: "img1 img2 img3" "img4 img5 img6";
     justify-content: stretch;
-    width: 100%; } }
+    width: 100%; }
+  .navbar {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    overflow-y: hidden; } }
